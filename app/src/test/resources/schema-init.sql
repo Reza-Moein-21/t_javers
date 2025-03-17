@@ -1,0 +1,1 @@
+create table person (id number(16) primary key, full_name varchar(500) )
