@@ -2,9 +2,11 @@ services:
   ora-12c:
     image: quay.io/maksymbilenko/oracle-12c:latest
     environment:
-      DBCA_TOTAL_MEMORY: 1024
+      DBCA_TOTAL_MEMORY: 2048
       WEB_CONSOLE: false 
     ports:
       - "1521:1521"
     volumes:
-      - ./db:/u01/app/oracle
+      - ora-db:/u01/app/oracle
+volumes:
+  ora-db:

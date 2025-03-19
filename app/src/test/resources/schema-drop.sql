@@ -1,9 +1,11 @@
-BEGIN
-   EXECUTE IMMEDIATE 'drop table person';
-EXCEPTION
-   WHEN OTHERS THEN
-      IF SQLCODE != -942 THEN
-         RAISE;
-      END IF;
-END;
+select * from dual
+--BEGIN
+--   EXECUTE IMMEDIATE 'drop table person';
+--EXCEPTION
+--   WHEN OTHERS THEN
+--      IF SQLCODE != -942 THEN
+--         RAISE;
+--      END IF;
+--END;
 
+--drop table person if exists
