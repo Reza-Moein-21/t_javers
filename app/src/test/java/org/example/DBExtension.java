@@ -15,12 +15,13 @@ import static org.example.TestDB.DATA_SOURCE;
 public class DBExtension implements BeforeEachCallback, AfterEachCallback, ParameterResolver {
     @Override
     public void beforeEach(ExtensionContext context) {
-        executeQuery(TestUtils.getFileContent("/schema-drop.sql"), TestUtils.getFileContent("/schema-init.sql"));
+        TestUtils.getFileContent("/schema-drop.sql").ifPresent(this::executeQuery);
+        TestUtils.getFileContent("/schema-init.sql").ifPresent(this::executeQuery);
     }
 
     @Override
     public void afterEach(ExtensionContext context) {
-        executeQuery(TestUtils.getFileContent("/schema-drop.sql"));
+        TestUtils.getFileContent("/schema-drop.sql").ifPresent(this::executeQuery);
     }
 
     @Override

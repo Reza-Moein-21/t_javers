@@ -6,9 +6,9 @@
     </appender>
 
     <!-- Enable MyBatis SQL logging -->
-    <logger name="org.mybatis" level="DEBUG" />
-<!--    <logger name="org.example" level="DEBUG" />-->
-    <logger name="java.sql.PreparedStatement" level="DEBUG" />
+<!--    <logger name="org.mybatis" level="DEBUG" />-->
+    <logger name="org.example" level="DEBUG" />
+<!--    <logger name="java.sql.PreparedStatement" level="DEBUG" />-->
     <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>

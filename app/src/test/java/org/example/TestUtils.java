@@ -5,10 +5,11 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
+import java.util.Optional;
 
 public class TestUtils {
 
-    public static String getFileContent(String path) {
+    public static Optional<String> getFileContent(String path) {
         try (
                 final var f = Files.lines(
                         Path.of(Objects.requireNonNull(
@@ -18,7 +19,7 @@ public class TestUtils {
 
         ) {
 
-            return f.reduce((s1, s2) -> s1 + s2).orElseThrow();
+            return f.reduce((s1, s2) -> s1 + s2);
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
