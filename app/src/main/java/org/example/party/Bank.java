@@ -23,5 +23,6 @@ public class Bank implements TrackableEntity<Long> {
     private String createdBy;
     private LocalDateTime modifiedAt;
     private String modifiedBy;
+
     private String title;
 }

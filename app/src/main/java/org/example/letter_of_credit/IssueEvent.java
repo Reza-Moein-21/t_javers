@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @Getter
 @ToString
 @Builder(toBuilder = true)
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class IssueEvent implements TrackableEntity<Long> {
     @Id
@@ -26,6 +26,7 @@ public class IssueEvent implements TrackableEntity<Long> {
     private String createdBy;
     private LocalDateTime modifiedAt;
     private String modifiedBy;
+
     private String applicantReference;
     private LocalDate issueDate;
     private LocalDate expiryDate;

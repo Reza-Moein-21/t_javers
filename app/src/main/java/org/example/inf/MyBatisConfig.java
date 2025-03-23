@@ -1,6 +1,5 @@
 package org.example.inf;
 
-import org.apache.ibatis.logging.slf4j.Slf4jImpl;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,6 +15,7 @@ public class MyBatisConfig {
         TransactionFactory transactionFactory = new JdbcTransactionFactory();
         Environment environment = new Environment("development", transactionFactory, dataSource);
         Configuration configuration = new Configuration(environment);
+        configuration.setLazyLoadingEnabled(false); // Due to conflict with javers
 
         configuration.addMappers("org.example");
 

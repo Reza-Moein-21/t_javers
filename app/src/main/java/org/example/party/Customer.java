@@ -23,6 +23,7 @@ public class Customer implements TrackableEntity<Long> {
     private String createdBy;
     private LocalDateTime modifiedAt;
     private String modifiedBy;
+
     private String cif;
     private String fullName;
 

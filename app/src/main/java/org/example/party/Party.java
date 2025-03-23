@@ -24,6 +24,7 @@ public class Party implements TrackableEntity<Long> {
     private String createdBy;
     private LocalDateTime modifiedAt;
     private String modifiedBy;
+
     private PartyType type;
     private Long key29;
     @DiffIgnore

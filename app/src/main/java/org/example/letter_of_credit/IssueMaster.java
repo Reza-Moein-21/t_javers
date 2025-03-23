@@ -26,6 +26,7 @@ public class IssueMaster implements TrackableEntity<Long> {
     private String createdBy;
     private LocalDateTime modifiedAt;
     private String modifiedBy;
+
     private String reference;
     private String inputBranch;
     private String behalfBranch;

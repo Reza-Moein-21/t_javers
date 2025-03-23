@@ -6,19 +6,22 @@ select s.snapshot_pk,
        c.author,
        c.commit_date,
        g.type_name,
+       g.local_id,
        s.version,
-       s.state,
-       s.changed_properties
+       s.changed_properties,
+       s.state
   from jv_snapshot s
   join jv_commit c
 on c.commit_pk = s.commit_fk
   join jv_global_id g
 on g.global_id_pk = s.global_id_fk
- order by c.commit_date desc;
+ where g.type_name = 'Issue'
+   and g.local_id = 2
+   --and c.author = 'User1'
+ order by c.commit_date;
 
-select * from person p where p.id = 1;
+select to_char(i.EXPIRY_DATE,'YYYY-MM-DD'), i.*
+  from issue_event i
+ where i.id = 2;
 
-select m.* from issue_event i 
-join ISSUE_MASTER m on m.id = i.MASTER_FK
-where i.id = 1;
-
+ 

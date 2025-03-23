@@ -17,8 +17,8 @@ public interface PartyRepository {
             @Result(property = "modifiedBy", column = "MODIFIED_BY"),
             @Result(property = "type", column = "TYPE_FLAG"),
             @Result(property = "key29", column = "KEY29"),
-            @Result(property = "customer", column = "KEY29", one = @One(select = "org.example.party.CustomerRepository.findCustomerById", fetchType = FetchType.LAZY)),
-            @Result(property = "bank", column = "KEY29", one = @One(select = "org.example.party.BankRepository.findBankById", fetchType = FetchType.LAZY)),
+            @Result(property = "customer", column = "KEY29", one = @One(select = "org.example.party.CustomerRepository.findCustomerById")),
+            @Result(property = "bank", column = "KEY29", one = @One(select = "org.example.party.BankRepository.findBankById")),
     })
     @Select("SELECT * FROM PARTY  WHERE ID = #{ID}")
     Optional<Party> findPartyById(Long id);
